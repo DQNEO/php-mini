@@ -27,7 +27,7 @@ class WAF
         return $this->get[$key];
     }
 
-    public function get($path, $callback)
+    public function get($path, callable $callback)
     {
         $this->actions['get'][$path] = $callback;
     }
