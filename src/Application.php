@@ -45,24 +45,16 @@ class WAF
                 continue;
             }
 
-            $routeMatcher = preg_replace('/\{[a-z]+\}/', '.*', $route);
-            var_dump($route, $routeMatcher, $this->pathinfo);
+            $routeMatcher = preg_replace('/\{[a-z]+\}/', '(.*)', $route);
             if (preg_match('#'.$routeMatcher.'#', $this->pathinfo, $matches)) {
-                echo "match\n";
-            } else {
-                echo "not match\n";
-            }
-
-            echo "=========<br>\n";
-            continue;
-            
-            $regex = str_replace('{id}', '(\d+)', $route);
-            if (preg_match('|'.$regex.'|', $this->pathinfo, $matches)) {
                 $arg = $matches[1];
                 $response = $ctl($arg);
                 $response->send();
                 return;
+            } else {
+                continue;
             }
+
         }
 
         $response = new Response('Not Found', 404, ['Content-Type' => 'text/plain']);
