@@ -13,4 +13,9 @@ $app->get('/monsters/{id}', function ($id) {
     return new Response("the $id th monster");
 });
 
+/* this does not work yet */
+$app->get('/hello/{name}', function ($name) {
+    return new Response("hell " . $name);
+});
+
 $app->run();
