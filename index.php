@@ -15,7 +15,7 @@ $app->get('/monsters/{id}', function ($id) {
 
 /* this does not work yet */
 $app->get('/hello/{name}', function ($name) {
-    return new Response("hell " . $name);
+    return new Response("hello " . $name);
 });
 
 $app->run();
