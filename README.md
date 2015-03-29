@@ -14,7 +14,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Response;
 
-$app = new \DQNEO\Mini;
+$app = new \DQNEO\Mini\Application;
 
 $db = new MyDB();
 
