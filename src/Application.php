@@ -1,7 +1,7 @@
 <?php
 use Symfony\Component\HttpFoundation\Response;
 
-class WAF
+class Application
 {
     private $actions;
     private $get;
