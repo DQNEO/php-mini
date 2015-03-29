@@ -11,8 +11,8 @@ class WAF
     public function __construct()
     {
         $this->get = $get = $_GET;
-        if (isset($_SERVER['REQUEST_URI'])) {
-            $this->pathinfo = $_SERVER['REQUEST_URI'];
+        if (isset($_SERVER['PATH_INFO'])) {
+            $this->pathinfo = $_SERVER['PATH_INFO'];
         } else {
             $this->pathinfo = '/';
         }
