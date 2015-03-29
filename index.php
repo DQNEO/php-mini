@@ -9,12 +9,8 @@ $app->get('/', function () {
     return new Response('hell world');
 });
 
+$app->get('/monsters/{id}', function ($id) {
+    return new Response("the $id th monster");
+});
+
 $app->run();
-
-/*
-echo "hello world\n";
-
-echo "<pre>\n";
-print_r($_SERVER);
-*/
-
