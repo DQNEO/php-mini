@@ -8,8 +8,6 @@ class WAF
     public $mg;
     private $pathinfo;
 
-    private $db;
-    
     public function __construct()
     {
         $this->get = $get = $_GET;
@@ -19,7 +17,6 @@ class WAF
             $this->pathinfo = '/';
         }
 
-        $this->db = new Model;
     }
 
     public function param($key)
@@ -33,11 +30,6 @@ class WAF
     public function get($path, $callback)
     {
         $this->actions['get'][$path] = $callback;
-    }
-
-    public function getDB()
-    {
-        return $this->db;
     }
 
     public function run()
