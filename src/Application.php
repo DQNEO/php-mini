@@ -10,7 +10,7 @@ class Application
 
     public function __construct()
     {
-        $this->get = $get = $_GET;
+        $this->get = $_GET;
         if (isset($_SERVER['PATH_INFO'])) {
             $this->pathinfo = $_SERVER['PATH_INFO'];
         } else {
